@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "facial-recognition-delivery-system"
+version = "0.1.0"
+description = "Raspberry Pi facial-recognition delivery lock and robot-control prototype."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "GPL-3.0-only" }
+dependencies = [
+    "numpy>=1.20",
+    "opencv-contrib-python>=4.5",
+    "Pillow>=8.0",
+]
+
+[project.optional-dependencies]
+raspberry-pi = [
+    "bluedot>=2.0",
+    "gpiozero>=1.6",
+    "RPi.GPIO>=0.7",
+]
+camera = [
+    "picamera>=1.13",
+]
+
+[project.scripts]
+capture-faces = "delivery_system.capture_faces:main"
+train-faces = "delivery_system.train_model:main"
+recognize-lock = "delivery_system.recognize_lock:main"
+robot-remote = "delivery_system.bluetooth_robot:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

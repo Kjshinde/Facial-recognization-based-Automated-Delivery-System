@@ -1,6 +1,6 @@
 # Facial Recognition Based Automated Delivery System
 
-A Raspberry Pi delivery prototype that combines:
+A Raspberry Pi delivery prototype that combines: 
 
 - face enrollment and LBPH face recognition with OpenCV
 - relay-based lock control for a delivery compartment
